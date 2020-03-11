@@ -1,15 +1,15 @@
 import React from 'react'
 import { View, Text } from 'react-native'
 
-class Home extends React.Component {
+class Settings extends React.Component {
 
   render() {
     return (
       <View>
-        <Text>Home</Text>
+        <Text>Settings</Text>
       </View>
     )
   }
 }
 
-export default Home
+export default Settings

@@ -1,15 +1,15 @@
 import React from 'react'
 import { View, Text } from 'react-native'
 
-class Home extends React.Component {
+class History extends React.Component {
 
   render() {
     return (
       <View>
-        <Text>Home</Text>
+        <Text>History</Text>
       </View>
     )
   }
 }
 
-export default Home
+export default History
