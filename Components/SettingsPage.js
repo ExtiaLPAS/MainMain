@@ -28,7 +28,7 @@ class SettingsPage extends React.Component {
         listItem: {
             backgroundColor: "#e0e0e0",
             padding: 20,
-            borderBottom: 'thin',
+            borderBottom: '1px solid',
             borderColor: 'black',
             marginHorizontal: 2,
             fontSize: 14,
