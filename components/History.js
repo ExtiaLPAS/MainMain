@@ -1,5 +1,6 @@
 import React from 'react'
 import { View, Text } from 'react-native'
+import Bottom from './Bottom'
 
 class History extends React.Component {
 
@@ -7,6 +8,7 @@ class History extends React.Component {
     return (
       <View>
         <Text>History</Text>
+        <Bottom />
       </View>
     )
   }
