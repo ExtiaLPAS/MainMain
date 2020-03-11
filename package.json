@@ -8,12 +8,16 @@
     "eject": "expo eject"
   },
   "dependencies": {
+    "@material-ui/core": "^4.9.5",
+    "@material-ui/icons": "^4.9.1",
     "@react-native-community/masked-view": "0.1.5",
     "@react-navigation/bottom-tabs": "^5.1.1",
     "@react-navigation/material-bottom-tabs": "^5.1.1",
     "@react-navigation/native": "^5.0.9",
     "@react-navigation/stack": "^5.1.1",
     "expo": "~36.0.0",
+    "material-ui-community-icons": "^0.15.0",
+    "material-ui-icons": "^1.0.0-beta.36",
     "react": "~16.9.0",
     "react-dom": "~16.9.0",
     "react-native": "https://github.com/expo/react-native/archive/sdk-36.0.0.tar.gz",
