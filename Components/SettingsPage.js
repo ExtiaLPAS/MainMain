@@ -4,8 +4,11 @@ import {Text, View} from 'react-native';
 class SettingsPage extends React.Component {
     render(){
         return(
-            <View> This the page for the settings. 
-                To be implemented </View>
+            <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+            <Text> This is the page for the settings. 
+            To be implemented </Text>
+            </View>
+           
         )
     }
 }

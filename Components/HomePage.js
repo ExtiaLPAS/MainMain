@@ -1,14 +1,14 @@
 import React from 'react';
-import {Text, View} from 'react-native';
+import {Text, View, FlatList} from 'react-native';
 
 class HomePage extends React.Component {
     render(){
         return(
-            <View style={{ alignSelf: 'center' }}>
-                <Text style={{ color: 'blue'}}>
-                    Home page where bluetooth activation will be checked.
-                    Message displayed if no bluetooth available.
-                </Text>
+            <View  style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+                <FlatList
+                    data={[{key: 'a'}, {key: 'b'},{key: 'a1'}, {key: 'b1'},{key: 'a2'}, {key: 'b2'},{key: 'a3'}, {key: 'b3'}]}
+                    renderItem={({item}) => <Text>{item.key}</Text>}
+                />
             </View>
         )
     }

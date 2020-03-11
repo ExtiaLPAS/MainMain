@@ -1,32 +1,28 @@
-import { NavigationContainer } from '@react-navigation/native';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import HomePage from '../Components/HomePage';
-import LSFPage from '../Components/LSFPage';
-import NightLightPage from '../Components/NightLightPage';
-import SettingsPage from '../Components/SettingsPage';
-import StoryboardPage from '../Components/StoryboardPage'
+import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
+import HomePage from '../Components/HomePage'
+import SettingsPage from '../Components/SettingsPage'
 import React from 'react'
-import FontAwesome, { SolidIcons, RegularIcons, BrandIcons } from 'react-native-fontawesome';
-import { TabNavigator } from 'react-navigation'
+import StoryboardPage from '../Components/StoryboardPage'
+import NightLightPage from '../Components/NightLightPage'
+import LSFPage from '../Components/LSFPage'
 
-/**
- * This class is needed for navigation purposes, it contains all the code necessary to set the navigation
- * system up between all the pages, hence why all of them are imported in there
- */
+const Tab = createMaterialBottomTabNavigator();
 
- const Tab = createBottomTabNavigator();
-
- export default class Navigation extends React.Component {
+class NavigationTabs extends React.Component {
     render(){
         return(
-            <NavigationContainer>
-                <Tab.Navigator>
-                    <Tab.Screen name="Accueil" component={HomePage}></Tab.Screen>
-                    <Tab.Screen name="Histoires" component={StoryboardPage}></Tab.Screen>
-                    <Tab.Screen name="LSF" component={LSFPage}></Tab.Screen>
-                    <Tab.Screen name="Paramètres" component={SettingsPage}></Tab.Screen>
-                </Tab.Navigator>
-            </NavigationContainer>
+            <Tab.Navigator   initialRouteName="HomePage"
+            activeColor="#f0edf6"
+            inactiveColor="#3e2465"
+            barStyle={{ backgroundColor: '#694fad' }}>
+          <Tab.Screen name="Accueil" component={HomePage} options={{tabBarLabel: 'Profile',tabBarIcon: ({ color }) => (<MaterialCommunityIcons name="account" color={color} size={26} />),}}/>
+          <Tab.Screen name="Histoires" component={StoryboardPage} />
+          <Tab.Screen name="Veilleuse" component={NightLightPage} />
+          <Tab.Screen name="LSF" component={LSFPage} />
+          <Tab.Screen name="Paramètres" component={SettingsPage} />
+        </Tab.Navigator>
         )
     }
- }
+}
+
+export default NavigationTabs;
