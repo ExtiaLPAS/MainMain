@@ -24,12 +24,12 @@ class SettingsPage extends React.Component {
         container: {
             flex: 1,
             marginTop: 10,
+            borderColor: 'black',
+            borderBottom: '1px solid'
         },
         listItem: {
             backgroundColor: "#e0e0e0",
             padding: 20,
-            borderBottom: '1px solid',
-            borderColor: 'black',
             marginHorizontal: 2,
             fontSize: 14,
         }
