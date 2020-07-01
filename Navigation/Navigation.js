@@ -40,7 +40,7 @@ function MainStackNavigator (){
             options={{title: 'Lecture',
             headerStyle:{
                 backgroundColor: 'white',
-                borderRadius : '0'
+                borderRadius : 0
             },
             hearderTintColor: '#fff',
             headerBackTitleStyle : {color : 'white', fontSize : 16, fontWeight: 'bold'},

@@ -1,9 +1,8 @@
 import React from 'react';
-import {Text, View,Image,FlatList, ItemSeparatorComponent, SafeAreaView, Dimensions} from 'react-native';
+import {Text, View,Image,FlatList, Dimensions} from 'react-native';
 import stories from '../Utils/Stories'
 import StoryItem from './StoryItem'
-import Icon from 'react-native-vector-icons/AntDesign';
-import Carousel,{ParallaxImage, Pagination } from 'react-native-snap-carousel';
+import Carousel,{Pagination } from 'react-native-snap-carousel';
 
 const { width: screenWidth }= Dimensions.get('window')
 
@@ -59,11 +58,11 @@ class StoryList extends React.Component {
     }
 
     get pagination () {
-        const { entries, activeSlide } = this.state;
+        const { entries, activeIndex } = this.state;
         return (
             <Pagination
               dotsLength={5}
-              activeDotIndex={activeSlide}
+              activeDotIndex={activeIndex}
               containerStyle={{ backgroundColor: 'white', marginBottom: -20, marginTop: 0 }}
               dotStyle={{
                   width: 10,
@@ -142,7 +141,7 @@ const styles = {
         flex : 1 ,
         width: 300,
         height: 250,
-        borderRightStyle: 'solid',
+        //borderRightStyle: 'solid',
         borderWidth: 1,
         borderColor: 'gray',
         borderRadius : 20,
