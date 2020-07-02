@@ -4,10 +4,16 @@ import {Text, Divider} from 'react-native-elements';
 import Icon from 'react-native-vector-icons/AntDesign';
 import {AirbnbRating} from 'react-native-elements';
 import {Slider} from 'react-native-elements';
+import {connect} from "react-redux";
 
 class StoryDetail extends React.Component {
   constructor(props) {
     super(props)
+  }
+
+  _toggleFavorite(){
+    const action = { type: "TOGGLE_FAVORITE", value: this.props.route.params.item }
+    this.props.dispatch(action)
   }
 
   render() {
@@ -35,7 +41,12 @@ class StoryDetail extends React.Component {
               </View>
 
               <View style={{alignItems: "center", marginLeft: 170, marginTop: 30}}>
-                <Icon color='#7158B6' size={30} name='heart'/>
+                <Icon
+                  color='#7158B6'
+                  size={30}
+                  name={this.props.favoritesStories.findIndex(item => item.title === this.props.route.params.item.title) !== -1 ? 'heart' : 'hearto'}
+                  onPress={() => this._toggleFavorite()}
+                />
               </View>
             </View>
 
@@ -179,5 +190,10 @@ const styles = StyleSheet.create({
 
 })
 
+const mapStateToProps = (state) => {
+  return {
+    favoritesStories: state.favoritesStories
+  }
+}
 
-export default StoryDetail
+export default connect(mapStateToProps)(StoryDetail)
