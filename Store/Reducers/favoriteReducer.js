@@ -8,7 +8,7 @@ function toggleFavorite(state = initialState, action) {
   let nextState
   switch (action.type) {
     case 'TOGGLE_FAVORITE':
-      const favoriteStoriesIndex = state.favoritesStories.findIndex(item => item.title === action.value.title)
+      const favoriteStoriesIndex = state.favoritesStories && state.favoritesStories.findIndex(item => item.title === action.value.title)
       if (favoriteStoriesIndex !== -1) {
         // L'histoire est déjà dans les favoris, on la supprime de la liste
         nextState = {
