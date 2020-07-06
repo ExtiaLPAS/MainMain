@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, StyleSheet, Text, Image,ScrollView} from 'react-native';
+import {View, StyleSheet, Text, Image} from 'react-native';
 import Animation from 'lottie-react-native';
 
 import anim from '../assets/17663-stories-button.json'
@@ -14,20 +14,17 @@ class HomePage extends React.Component {
   render() {
     return (
 
-
-      <View style={{flex:1}} >
-      <ScrollView style={styles.scrollview_container} scrollIndicatorInsets={{right: 1}}>    
-
-      <View style={{backgroundColor: 'white', marginBottom: 0, padding: 0, marginTop: 0}}>
-        <View style={{marginTop: '10%' , marginLeft: 15}}>
+      <View style={{flex: 1, backgroundColor: 'white', marginBottom: 0, padding: 0, marginTop: 0}}>
+        <View style={{marginTop: 60, marginLeft: 15}}>
 
           <Text style={{fontSize: 32, justifyContent: 'center', fontWeight: '700', marginLeft: 20, marginBottom: 0}}>
             Hello,
           </Text>
 
           <View style={{flex: 0, flexDirection: 'row', elevation: 2}}>
+
             <Text
-              style={{fontSize: 32, justifyContent: 'center', fontWeight: '700', marginLeft: 20, marginBottom: 10}}>
+              style={{fontSize: 32, justifyContent: 'center', fontWeight: '700', marginLeft: 20, marginBottom: 10,}}>
               Main-Main.
             </Text>
 
@@ -49,7 +46,7 @@ class HomePage extends React.Component {
         </View>
 
         <View style={{
-
+          flex: 1,
           borderRadius: 100,
           backgroundColor: 'white',
           marginBottom: 50,
@@ -77,8 +74,6 @@ class HomePage extends React.Component {
 
 
       </View>
-    </ScrollView>  
-    </View>
     )
   }
 }
@@ -87,7 +82,7 @@ const styles = StyleSheet.create({
   imageBack: {
 
     borderRadius: 20,
-    height: '500%',
+    height: '80%',
     width: '100%',
     justifyContent: 'center',
     alignItems: 'center',
@@ -106,14 +101,12 @@ const styles = StyleSheet.create({
   image_animation_reading: {
     height: 160,
     width: 160,
+    margin: 4,
     marginTop: 5,
     marginRight: 'auto',
     marginLeft: 'auto',
     justifyContent: 'center',
     alignItems: 'center'
-  },
-  scrollview_container: {
-    backgroundColor: 'white'
   }
 
 
