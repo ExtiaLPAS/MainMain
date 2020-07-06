@@ -44,7 +44,7 @@ class StoryDetail extends React.Component {
                 <Icon
                   color='#7158B6'
                   size={30}
-                  name={this.props.favoritesStories.findIndex(item => item.title === this.props.route.params.item.title) !== -1 ? 'heart' : 'hearto'}
+                  name={this.props.favoritesStories && this.props.favoritesStories.findIndex(item => item.title === this.props.route.params.item.title) !== -1 ? 'heart' : 'hearto'}
                   onPress={() => this._toggleFavorite()}
                 />
               </View>
@@ -192,7 +192,7 @@ const styles = StyleSheet.create({
 
 const mapStateToProps = (state) => {
   return {
-    favoritesStories: state.favoritesStories
+    favoritesStories: state.toggleFavorite.favoritesStories
   }
 }
 

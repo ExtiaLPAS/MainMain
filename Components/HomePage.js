@@ -3,6 +3,8 @@ import {View, StyleSheet, Text, Image} from 'react-native';
 import Animation from 'lottie-react-native';
 
 import anim from '../assets/17663-stories-button.json'
+import {TouchableOpacity } from 'react-native-gesture-handler';
+import {connect} from "react-redux";
 
 
 class HomePage extends React.Component {
@@ -15,32 +17,34 @@ class HomePage extends React.Component {
     return (
 
       <View style={{flex: 1, backgroundColor: 'white', marginBottom: 0, padding: 0, marginTop: 0}}>
-        <View style={{marginTop: 60, marginLeft: 15}}>
+        <View style={{marginTop: 10, marginLeft: 15}}>
 
           <Text style={{fontSize: 32, justifyContent: 'center', fontWeight: '700', marginLeft: 20, marginBottom: 0}}>
-            Hello,
+            Hello, {this.props.prenom}
           </Text>
 
           <View style={{flex: 0, flexDirection: 'row', elevation: 2}}>
 
-            <Text
-              style={{fontSize: 32, justifyContent: 'center', fontWeight: '700', marginLeft: 20, marginBottom: 10,}}>
+            <Text style={{fontSize: 32, justifyContent: 'center', fontWeight: '700', marginLeft: 20, marginBottom: 10,}}>
               Main-Main.
             </Text>
 
-            <Image
-              source={require('../assets/main-main_full.png')}
-              style={{
-                height: 50,
-                width: 50,
-                alignItems: 'center',
-                justifyContent: 'flex-end',
-                borderRadius: 100,
-                borderWidth: 1,
-                marginLeft: 90,
-                marginBottom: 0
-              }}
-            />
+            <TouchableOpacity onPress={() => this.props.navigation.navigate('Profil')}>
+              <Image
+                source={require('../assets/main-main_full.png')}
+                style={{
+                  height: 50,
+                  width: 50,
+                  alignItems: 'center',
+                  justifyContent: 'flex-end',
+                  borderRadius: 100,
+                  borderWidth: 1,
+                  marginLeft: 90,
+                  marginBottom: 0
+                }}
+              />
+            </TouchableOpacity>
+
 
           </View>
         </View>
@@ -112,4 +116,10 @@ const styles = StyleSheet.create({
 
 })
 
-export default HomePage;
+const mapStateToProps = (state) => {
+  return {
+    prenom: state.toggleProfile.prenom,
+  }
+}
+
+export default connect(mapStateToProps)(HomePage);
